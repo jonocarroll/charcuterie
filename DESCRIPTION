@@ -1,0 +1,19 @@
+Package: charcuterie
+Title: Handle Strings as Vectors of Characters
+Version: 0.0.0.9000
+Authors@R: c(
+ person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264"))
+ )
+Description: Creates a new chars class which looks like a string but is actually a vector of single characters.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+Imports: 
+    utils

@@ -1,0 +1,88 @@
+---
+title: "Use Cases"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Use Cases}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The following examples demonstrate using `chars` objects inside functions, no 
+longer needing to spell out `strsplit(x, "")[[1]]` every time. 
+
+```{r setup}
+library(charcuterie)
+```
+
+## Test Membership
+
+Which letters are vowels (aeiou)?
+
+```{r}
+vowels <- function(word) {
+  ch <- chars(word)
+  setNames(ch %in% chars("aeiou"), ch)
+}
+vowels("string")
+vowels("banana")
+```
+
+Since `%in%` is vectorised, it works nicely with a `chars` object
+
+```{r}
+banana <- chars("banana")
+banana[which(banana %in% chars("aeiou"))]
+
+onomatopoeia <- chars("onomatopoeia")
+onomatopoeia[which(onomatopoeia %in% chars("aeiou"))]
+```
+
+## Iterate
+
+"Strings" are finally iterable 
+
+```{r}
+for (x in chars("ABC")) {
+  print(paste("Appendix", x))
+}
+```
+
+## Identify Palindromes
+
+Is a word a palindrome (spelled the same forwards and backwards)?
+
+```{r}
+palindrome <- function(a, ignore_spaces = FALSE) {
+  if (ignore_spaces) a <- except(a, " ")
+  all(rev(a) == a)
+}
+palindrome(chars("palindrome"))
+palindrome(chars("racecar"))
+palindrome(chars("never odd or even"), ignore_spaces = TRUE)
+palindrome(chars("go hang a salami im a lasagna hog"), ignore_spaces = TRUE)
+```
+
+## Find Anagrams
+
+Are two words just rearrangements of their letters?
+
+```{r}
+anagram <- function(a, b) {
+  is_anagram <- function(a, b) {
+    length(a) == length(b) && all(sort(a) == sort(b))
+  }
+  sapply(candidates, \(x) is_anagram(chars(a), chars(x)))
+}
+target <- "stressed"
+candidates <- c("started", "desserts", "rested")
+anagram(target, candidates)
+```

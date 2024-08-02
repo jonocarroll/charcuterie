@@ -1,0 +1,170 @@
+---
+title: "Example Usage"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Example Usage}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+With strings encoded as a vector of characters, we can perform vector operations 
+over the _actual_ characters. All {charcuterie} functions aim to return a new 
+object of class "chars" so it is also able to be printed as a string and passed 
+to other vector-handling functions.
+
+```{r setup}
+library(charcuterie)
+```
+
+To convert a regular string into a `chars` object, use `chars()`. This prints as 
+a string, but is actually a vector
+
+```{r}
+chars("string")
+
+# but it's a vector
+unclass(chars("string"))
+```
+
+Only a single string can be converted this way, so if you want to produce more 
+than one of these, I suggest
+
+```{r}
+many_chars <- lapply(c("foo", "bar", "baz"), chars)
+many_chars
+unclass(many_chars[[2]])
+```
+
+A regular string can be recovered using `string()` which pastes the characters 
+back together
+
+```{r}
+string(chars("string"))
+```
+
+and this can optionally take a separator
+
+```{r}
+string(chars("string"), collapse = "|")
+```
+
+Because the `chars` object is a vector we can do vector things, such as indexing
+
+```{r}
+"string"[3] # doesn't work
+
+chars("string")[3]
+chars("banana")[seq(2, 6, 2)]
+```
+
+subsetting
+
+```{r}
+head("string", 3) # doesn't work
+
+head(chars("string"), 3)
+tail(chars("string"), 3)
+```
+
+tabulating
+
+```{r}
+table("mississippi") # doesn't work
+
+table(chars("mississippi"))
+```
+
+sorting
+
+```{r}
+sort("string") # doesn't work
+
+sort(chars("string"))
+sort(chars("string"), decreasing = TRUE)
+```
+
+reversing
+
+```{r}
+rev("string") # doesn't work
+
+rev(chars("string"))
+```
+
+Since these are vectors, we no longer need `nchar` to determine the length
+
+```{r}
+length("string") # just the one 'string'
+
+length(chars("string")) == nchar("string")
+```
+
+Membership tests can now determine if a given character is in the 'string'
+
+```{r}
+"i" %in% "rhythm" # doesn't work
+"y" %in% "rhythm" # doesn't work
+
+"i" %in% chars("rhythm")
+"y" %in% chars("rhythm")
+
+is.element("y", "rhythm") # doesn't work
+
+is.element("y", chars("rhythm"))
+```
+
+`chars` objects can be concatenated; combining two strings produces a longer string
+
+```{r}
+c("butter", "fly") # doesn't work in the character sense
+
+c(chars("butter"), chars("fly"))
+c(chars("butter"), chars("fly"))[c(1, 9)]
+```
+
+Set operations can be useful
+
+```{r}
+setdiff(chars("javascript"), chars("script"))
+union(chars("bunny"), chars("rabbit"))
+intersect(chars("bob"), chars("rob"))
+setequal(chars("stop"), chars("post"))
+setequal(chars("stop"), chars("posit"))
+unique(chars("mississippi"))
+```
+
+Since `chars` objects are regular vectors, they continue to work with 
+other vectorised operations
+
+```{r}
+rev(toupper(chars("string")))
+toString(chars("abc"))
+
+Filter(\(x) x != "a", "banana")
+Filter(\(x) x != "a", chars("banana"))
+```
+
+This last example motivates a non-set-wise way to exclude some characters, so this 
+package introduces a new `except` function
+
+```{r}
+except(chars("javascript"), chars("script"))
+except(chars("carpet"), chars("car"))
+except(chars("banana"), "a")
+except(chars("banana"), chars("a"))
+```
+
+Anywhere a vector of individual character works, a `chars` object should also work
+
+```{r}
+data.frame(number = 1:3, letter = chars("abc"))
+```
