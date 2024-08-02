@@ -17,3 +17,5 @@ VignetteBuilder: knitr
 Config/testthat/edition: 3
 Imports: 
     utils
+URL: https://github.com/jonocarroll/charcuterie
+BugReports: https://github.com/jonocarroll/charcuterie/issues
