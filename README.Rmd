@@ -33,6 +33,8 @@ remotes::install_github("jonocarroll/charcuterie")
 
 ## Motivation
 
+See this blog post: https://jcarroll.com.au/2024/08/03/charcuterie-what-if-strings-were-iterable-in-r/
+
 Most programming languages seem to treat a string as an array of characters, but 
 not R, where a "string" is an object of type "character" which has a length of 1. 
 The number of 'characters' in a string is obtained via `nchar(x)` but otherwise, 
