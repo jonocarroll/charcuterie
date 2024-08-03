@@ -14,6 +14,7 @@ Creates a new chars class which looks like a string but is actually a vector of 
 Useful links:
 \itemize{
   \item \url{https://github.com/jonocarroll/charcuterie}
+  \item \url{https://jonocarroll.github.io/charcuterie/}
   \item Report bugs at \url{https://github.com/jonocarroll/charcuterie/issues}
 }
 
