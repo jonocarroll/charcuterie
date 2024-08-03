@@ -62,13 +62,14 @@ Is a word a palindrome (spelled the same forwards and backwards)?
 
 ```{r}
 palindrome <- function(a, ignore_spaces = FALSE) {
+  a <- chars(a)
   if (ignore_spaces) a <- except(a, " ")
   all(rev(a) == a)
 }
-palindrome(chars("palindrome"))
-palindrome(chars("racecar"))
-palindrome(chars("never odd or even"), ignore_spaces = TRUE)
-palindrome(chars("go hang a salami im a lasagna hog"), ignore_spaces = TRUE)
+palindrome("palindrome")
+palindrome("racecar")
+palindrome("never odd or even", ignore_spaces = TRUE)
+palindrome("go hang a salami im a lasagna hog", ignore_spaces = TRUE)
 ```
 
 ## Find Anagrams
