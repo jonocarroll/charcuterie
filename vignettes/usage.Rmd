@@ -75,6 +75,14 @@ head(chars("string"), 3)
 tail(chars("string"), 3)
 ```
 
+substituting
+
+```{r}
+word <- chars("string")
+word[3] <- "R"
+word
+```
+
 tabulating
 
 ```{r}
