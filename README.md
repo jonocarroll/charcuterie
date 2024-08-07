@@ -44,11 +44,6 @@ does the above all the same)
 
 ``` r
 library(charcuterie)
-#> 
-#> Attaching package: 'charcuterie'
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, union
 s <- chars("string")
 s
 #> [1] "string"

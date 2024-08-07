@@ -1,6 +1,6 @@
 Package: charcuterie
 Title: Handle Strings as Vectors of Characters
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264"))
  )
@@ -16,6 +16,7 @@ Suggests:
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 Imports: 
+    generics,
     utils
 URL: https://github.com/jonocarroll/charcuterie, https://jonocarroll.github.io/charcuterie/
 BugReports: https://github.com/jonocarroll/charcuterie/issues

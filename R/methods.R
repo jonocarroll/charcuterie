@@ -46,59 +46,25 @@ c.chars <- function(...) {
   res
 }
 
-#' Set Operations
-#' @rdname methods
-#' @param x vector
-#' @param y vector
-#' @export
-setdiff <- function(x, y) {
-  UseMethod("setdiff")
-}
-
 #' @inheritParams base::setdiff
+#' @importFrom generics setdiff
 #' @export
-setdiff.default <- function(x, y) base::setdiff(x, y)
-
-#' @inheritParams base::setdiff
-#' @export
-setdiff.chars <- function(x, y) {
-  rewrap_xy(setdiff, x, y)
+setdiff.chars <- function(x, y, ...) {
+  rewrap_xy(setdiff, x, y, ...)
 }
-
-#' Set Operations
-#' @rdname methods
-#' @param x vector
-#' @param y vector
-#' @export
-union <- function(x, y) {
-  UseMethod("union")
-}
-
-#' @export
-union.default <- function(x, y) base::union(x, y)
 
 #' @inheritParams base::union
+#' @importFrom generics union
 #' @export
-union.chars <- function(x, y) {
-  rewrap_xy(union, x, y)
+union.chars <- function(x, y, ...) {
+  rewrap_xy(union, x, y, ...)
 }
-
-#' Set Operations
-#' @rdname methods
-#' @param x vector
-#' @param y vector
-#' @export
-intersect <- function(x, y) {
-  UseMethod("intersect")
-}
-
-#' @export
-intersect.default <- function(x, y) base::intersect(x, y)
 
 #' @inheritParams base::intersect
+#' @importFrom generics intersect
 #' @export
-intersect.chars <- function(x, y) {
-  rewrap_xy(intersect, x, y)
+intersect.chars <- function(x, y, ...) {
+  rewrap_xy(intersect, x, y, ...)
 }
 
 #' @inheritParams base::unique
