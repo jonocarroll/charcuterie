@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">charcuterie</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,12 +71,7 @@ functions aim to return a new object of class “chars” so it is also able
 to be printed as a string and passed to other vector-handling
 functions.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jonocarroll/charcuterie" class="external-link">charcuterie</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attaching package: 'charcuterie'</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     intersect, setdiff, union</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jonocarroll/charcuterie" class="external-link">charcuterie</a></span><span class="op">)</span></span></code></pre></div>
 <p>To convert a regular string into a <code>chars</code> object, use
 <code><a href="../reference/chars.html">chars()</a></code>. This prints as a string, but is actually a
 vector</p>
@@ -201,12 +196,12 @@ produces a longer string</p>
 <span><span class="co">#&gt; [1] "by"</span></span></code></pre></div>
 <p>Set operations can be useful</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/methods.html">setdiff</a></span><span class="op">(</span><span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"javascript"</span><span class="op">)</span>, <span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"script"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "jav"</span></span>
-<span><span class="fu"><a href="../reference/methods.html">union</a></span><span class="op">(</span><span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"bunny"</span><span class="op">)</span>, <span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"rabbit"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "bunyrait"</span></span>
-<span><span class="fu"><a href="../reference/methods.html">intersect</a></span><span class="op">(</span><span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"bob"</span><span class="op">)</span>, <span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"rob"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "bo"</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sets.html" class="external-link">setdiff</a></span><span class="op">(</span><span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"javascript"</span><span class="op">)</span>, <span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"script"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "j" "a" "v"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sets.html" class="external-link">union</a></span><span class="op">(</span><span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"bunny"</span><span class="op">)</span>, <span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"rabbit"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "b" "u" "n" "y" "r" "a" "i" "t"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sets.html" class="external-link">intersect</a></span><span class="op">(</span><span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"bob"</span><span class="op">)</span>, <span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"rob"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "b" "o"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sets.html" class="external-link">setequal</a></span><span class="op">(</span><span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"stop"</span><span class="op">)</span>, <span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"post"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sets.html" class="external-link">setequal</a></span><span class="op">(</span><span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"stop"</span><span class="op">)</span>, <span class="fu"><a href="../reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"posit"</span><span class="op">)</span><span class="op">)</span></span>
