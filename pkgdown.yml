@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   usage: usage.html
   use_cases: use_cases.html
-last_built: 2024-09-02T01:44Z
+last_built: 2024-09-02T01:51Z
 urls:
   reference: https://jonocarroll.github.io/charcuterie/reference
   article: https://jonocarroll.github.io/charcuterie/articles
