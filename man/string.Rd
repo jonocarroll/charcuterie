@@ -2,17 +2,20 @@
 % Please edit documentation in R/chars.R
 \name{string}
 \alias{string}
-\title{Create a string from a chars object}
+\title{Create a String From a \code{chars} Object}
 \usage{
-string(..., collapse = "")
+string(x, collapse = "", ...)
 }
 \arguments{
-\item{...}{one or more \R objects, to be converted to character vectors.}
+\item{x}{one or more \code{chars} objects.}
 
-\item{collapse}{an optional character string to separate the results.  Not
-    \code{\link[base]{NA_character_}}.  When \code{collapse} is a string,
-    the result is always a string (\code{\link[base]{character}} of length 1).}
+\item{collapse}{an optional character string to separate the results. Not NA_character_.}
+
+\item{...}{other arguments passed to \code{\link[=paste]{paste()}}}
+}
+\value{
+a \code{character} (traditional R string) with the elements of \code{x} in a single value.
 }
 \description{
-Create a string from a chars object
+Create a String From a \code{chars} Object
 }

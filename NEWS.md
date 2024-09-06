@@ -1,3 +1,8 @@
+# charcuterie 0.0.3
+
+* reworked documentation
+* updated interface of `string`
+
 # charcuterie 0.0.2
 
 * use {generics} for setdiff, union, intersect generics - thanks to @DavisVaughan

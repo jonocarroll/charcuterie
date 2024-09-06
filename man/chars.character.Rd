@@ -2,17 +2,21 @@
 % Please edit documentation in R/chars.R
 \name{chars.character}
 \alias{chars.character}
-\title{Create a chars object from a string}
+\title{Create a \code{chars} Object From a String}
 \usage{
 \method{chars}{character}(x, ...)
 }
 \arguments{
-\item{x}{string to convert to a chars object (length 1 only)}
+\item{x}{string to convert to a \code{chars} object (length 1 only).}
 
 \item{...}{unused}
 }
+\value{
+an object of class \code{chars}, essentially splitting the string into
+individual characters
+}
 \description{
-Create a chars object from a string
+Create a \code{chars} Object From a String
 }
 \details{
 \code{chars} expects a single string as input. To create a list of these,

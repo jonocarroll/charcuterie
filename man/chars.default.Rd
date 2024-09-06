@@ -2,7 +2,7 @@
 % Please edit documentation in R/chars.R
 \name{chars.default}
 \alias{chars.default}
-\title{Convert an object to chars}
+\title{Convert an Object to \code{chars}}
 \usage{
 \method{chars}{default}(x, ...)
 }
@@ -11,6 +11,9 @@
 
 \item{...}{other options}
 }
+\value{
+\code{.NotYetImplemented()} error
+}
 \description{
-Convert an object to chars
+Convert an Object to \code{chars}
 }

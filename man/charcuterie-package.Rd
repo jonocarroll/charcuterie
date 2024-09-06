@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Creates a new chars class which looks like a string but is actually a vector of single characters.
+Creates a new chars class which looks like a string but is actually a vector of individual characters, making 'strings' iterable. This class enables vector operations on 'strings' such as reverse, sort, head, and set operations.
 }
 \seealso{
 Useful links:

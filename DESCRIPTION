@@ -1,10 +1,13 @@
 Package: charcuterie
 Title: Handle Strings as Vectors of Characters
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264"))
  )
-Description: Creates a new chars class which looks like a string but is actually a vector of single characters.
+Description: Creates a new chars class which looks like a string but is actually 
+    a vector of individual characters, making 'strings' iterable. This class 
+    enables vector operations on 'strings' such as reverse, sort, head, and set 
+    operations.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

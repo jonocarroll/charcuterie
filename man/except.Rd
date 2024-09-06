@@ -2,17 +2,20 @@
 % Please edit documentation in R/except.R
 \name{except}
 \alias{except}
-\title{Elements of x except those in y}
+\title{Elements of x Except Those in y}
 \usage{
 except(x, y)
 }
 \arguments{
-\item{x}{larger vector}
+\item{x}{larger vector.}
 
-\item{y}{smaller vector}
+\item{y}{smaller vector.}
+}
+\value{
+elements of \code{x} not appearing in \code{y}.
 }
 \description{
-Does not treat the operation as a set
+Does not treat the operation as a set.
 }
 \examples{
 except(c(1:5), 3)

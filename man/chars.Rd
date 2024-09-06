@@ -2,15 +2,18 @@
 % Please edit documentation in R/chars.R
 \name{chars}
 \alias{chars}
-\title{Create a chars object}
+\title{Create a \code{chars} Object}
 \usage{
 chars(x, ...)
 }
 \arguments{
-\item{x}{object to convert}
+\item{x}{object to convert to \code{chars}.}
 
-\item{...}{other options}
+\item{...}{other options passed to methods.}
+}
+\value{
+an object of class \code{chars}.
 }
 \description{
-Create a chars object
+Create a \code{chars} Object
 }

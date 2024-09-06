@@ -1,9 +1,11 @@
-#' Elements of x except those in y
+#' Elements of x Except Those in y
 #'
-#' Does not treat the operation as a set
+#' Does not treat the operation as a set.
 #'
-#' @param x larger vector
-#' @param y smaller vector
+#' @param x larger vector.
+#' @param y smaller vector.
+#'
+#' @return elements of `x` not appearing in `y`.
 #'
 #' @export
 #' @examples
