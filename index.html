@@ -65,8 +65,11 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of {charcuterie} like so:</p>
+<p>You can install the published version from CRAN with</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"charcuterie"</span><span class="op">)</span></span></code></pre></div>
+<p>You can install the development version with</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"jonocarroll/charcuterie"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -76,18 +79,23 @@
 <p>See this blog post: <a href="https://jcarroll.com.au/2024/08/03/charcuterie-what-if-strings-were-iterable-in-r/" class="external-link uri">https://jcarroll.com.au/2024/08/03/charcuterie-what-if-strings-were-iterable-in-r/</a></p>
 <p>Most programming languages seem to treat a string as an array of characters, but not R, where a “string” is an object of type “character” which has a length of 1. The number of ‘characters’ in a string is obtained via <code>nchar(x)</code> but otherwise, the individual ‘characters’ comprising the string are rarely exposed.</p>
 <p>The most common route around this limitation is to split the string into smaller strings, each containing a single character, i.e.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/strsplit.html" class="external-link">strsplit</a></span><span class="op">(</span><span class="st">"string"</span>, split <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
 <span><span class="co">#&gt; [1] "s" "t" "r" "i" "n" "g"</span></span></code></pre></div>
 <p>which produces a list of strings, each a single character. This is cumbersome to type out, so this package offers a cleaner approach (which does the above all the same)</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jonocarroll/charcuterie" class="external-link">charcuterie</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'charcuterie'</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     intersect, setdiff, union</span></span>
 <span><span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/chars.html">chars</a></span><span class="op">(</span><span class="st">"string"</span><span class="op">)</span></span>
 <span><span class="va">s</span></span>
 <span><span class="co">#&gt; [1] "string"</span></span></code></pre></div>
 <p>This <em>looks like</em> it did nothing, but that’s the point - it still looks like a “string”. It’s actually a vector, though</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">unclass</a></span><span class="op">(</span><span class="va">s</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "s" "t" "r" "i" "n" "g"</span></span></code></pre></div>
 </div>
@@ -95,15 +103,15 @@
 <h2 id="example-usage">Example Usage<a class="anchor" aria-label="anchor" href="#example-usage"></a>
 </h2>
 <p>This means you can finally do vector things with it, like reverse it</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rev.html" class="external-link">rev</a></span><span class="op">(</span><span class="va">s</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "gnirts"</span></span></code></pre></div>
 <p>or sort it</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">s</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "ginrst"</span></span></code></pre></div>
 <p>or index into it</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">s</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] "r"</span></span></code></pre></div>
 <p>{charcuterie} defines S3 methods of functions for a wide range of operations to be performed on a string built from a vector of characters</p>
