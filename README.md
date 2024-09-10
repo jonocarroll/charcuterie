@@ -11,7 +11,13 @@ character vectors.
 
 ## Installation
 
-You can install the development version of {charcuterie} like so:
+You can install the published version from CRAN with
+
+``` r
+install.packages("charcuterie")
+```
+
+You can install the development version with
 
 ``` r
 # install.packages("remotes")
@@ -44,6 +50,11 @@ does the above all the same)
 
 ``` r
 library(charcuterie)
+#> 
+#> Attaching package: 'charcuterie'
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, union
 s <- chars("string")
 s
 #> [1] "string"

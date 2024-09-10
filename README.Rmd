@@ -24,7 +24,13 @@ The goal of {charcuterie} is to finally have strings as iterable character vecto
 
 ## Installation
 
-You can install the development version of {charcuterie} like so:
+You can install the published version from CRAN with
+
+``` r
+install.packages("charcuterie")
+```
+
+You can install the development version with
 
 ``` r
 # install.packages("remotes")
