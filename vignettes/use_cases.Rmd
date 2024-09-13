@@ -103,5 +103,5 @@ spongebob("you can't do anything useful with this package")
 ```
 
 ```{r, echo=FALSE}
-knitr::include_graphics("../man/figures/spongebob.jpg")
+knitr::include_graphics("spongebob.jpg")
 ```

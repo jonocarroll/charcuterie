@@ -1,3 +1,8 @@
+# charcuterie 0.0.4
+
+* fix for CRAN error of vignette image
+* added `is_number()`, `is_letter()`, `is_alnum()`, and `is_punct()`
+
 # charcuterie 0.0.3
 
 * reworked documentation
