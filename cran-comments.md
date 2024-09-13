@@ -1,8 +1,17 @@
-## New package
+## Updated package
 
-Checked on R-hub v2 (linux, macos, macos-arm64, windows) and win-builder (devel)
+Fix for errors on r-oldrel-macos-arm64 and r-oldrel-macos-x86_64
 
-Updated submission based on feedback from Beni Altmann.
+Checked on R-hub v2 
+
+- linux
+- macos
+- macos-arm64
+- windows
+- ubuntu-next
+- ubuntu-release
+
+and win-builder (devel)
 
 ## R CMD check results
 
