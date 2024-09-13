@@ -18,6 +18,10 @@
 <url><loc>https://jonocarroll.github.io/charcuterie/reference/head.chars.html</loc></url>
 <url><loc>https://jonocarroll.github.io/charcuterie/reference/index.html</loc></url>
 <url><loc>https://jonocarroll.github.io/charcuterie/reference/intersect.chars.html</loc></url>
+<url><loc>https://jonocarroll.github.io/charcuterie/reference/is_alnum.html</loc></url>
+<url><loc>https://jonocarroll.github.io/charcuterie/reference/is_letter.html</loc></url>
+<url><loc>https://jonocarroll.github.io/charcuterie/reference/is_number.html</loc></url>
+<url><loc>https://jonocarroll.github.io/charcuterie/reference/is_punct.html</loc></url>
 <url><loc>https://jonocarroll.github.io/charcuterie/reference/print.chars.html</loc></url>
 <url><loc>https://jonocarroll.github.io/charcuterie/reference/reexports.html</loc></url>
 <url><loc>https://jonocarroll.github.io/charcuterie/reference/rev.chars.html</loc></url>
