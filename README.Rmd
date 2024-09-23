@@ -90,6 +90,12 @@ or index into it
 s[3]
 ```
 
+or count elements
+
+```{r}
+count(chars("strawberry"), "r")
+```
+
 {charcuterie} defines S3 methods of functions for a wide range of operations to 
 be performed on a string built from a vector of characters
 

@@ -91,6 +91,13 @@ s[3]
 #> [1] "r"
 ```
 
+or count elements
+
+``` r
+count(chars("strawberry"), "r")
+#> [1] 3
+```
+
 {charcuterie} defines S3 methods of functions for a wide range of
 operations to be performed on a string built from a vector of characters
 
