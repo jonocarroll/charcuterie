@@ -1,3 +1,7 @@
+# charcuterie 0.0.6
+
+* added explicit {vctrs} dependency (needed by `testthat::expect_vector()`)
+
 # charcuterie 0.0.5
 
 * added `count()`; "strawberry" has 3 'r's
