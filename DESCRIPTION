@@ -1,6 +1,6 @@
 Package: charcuterie
 Title: Handle Strings as Vectors of Characters
-Version: 0.0.5
+Version: 0.0.6
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264"))
  )
@@ -15,7 +15,8 @@ RoxygenNote: 7.2.3
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    vctrs
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 Imports: 
