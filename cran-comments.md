@@ -1,6 +1,7 @@
 ## Updated package
 
-Fix for errors on r-oldrel-macos-arm64 and r-oldrel-macos-x86_64
+Fix for errors regarding missing vctrs dependency (previously implicit via 
+waldo via testthat)
 
 Checked on R-hub v2 
 
@@ -8,10 +9,8 @@ Checked on R-hub v2
 - macos
 - macos-arm64
 - windows
-- ubuntu-next
-- ubuntu-release
 
-and win-builder (devel)
+and win-builder (devel, release)
 
 ## R CMD check results
 
